@@ -7,7 +7,7 @@ import Card from "../card"
 import mcq from '../../imgs/mcq.jpeg'
 import coding from '../../imgs/coding.jpeg'
 
-import BACKEND_URL from './config';
+import BACKEND_URL from "../../config";
 import './index.css'
 
 class AllTests extends Component {

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { BiArrowBack, BiUpload } from 'react-icons/bi'
-import BACKEND_URL from './config';
+import BACKEND_URL from "../../config";
 
 import { TiTick } from 'react-icons/ti'
 import { RxCross2 } from 'react-icons/rx'

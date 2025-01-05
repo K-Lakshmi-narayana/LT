@@ -2,7 +2,7 @@ import React from 'react'
 import { Component } from "react"
 import Modal from 'react-modal'
 
-import BACKEND_URL from './config';
+import BACKEND_URL from "../../config";
 import './index.css'
 
 class Card extends Component {

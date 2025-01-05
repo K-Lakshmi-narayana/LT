@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
-import BACKEND_URL from './config';
+import BACKEND_URL from "../../config";
 
 import { ThreeDots } from 'react-loader-spinner'
 import "./index.css"

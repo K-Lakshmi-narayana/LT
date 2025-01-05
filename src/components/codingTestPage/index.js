@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Editor from "@monaco-editor/react";
 import { BsFillPlayFill } from 'react-icons/bs'
 import { ThreeDots } from 'react-loader-spinner'
-import BACKEND_URL from './config';
+import BACKEND_URL from "../../config";
 
 import './index.css'
 

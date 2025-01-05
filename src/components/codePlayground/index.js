@@ -1,7 +1,7 @@
 import { Component, React } from 'react'
 import './index.css'
 
-import BACKEND_URL from './config';
+import BACKEND_URL from "../../config";
 
 import Editor from "@monaco-editor/react";
 import logo from "../../imgs/logo.jpeg";

@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import Header from "../header"
-import BACKEND_URL from './config';
+import BACKEND_URL from "../../config";
 
 import './index.css'
 

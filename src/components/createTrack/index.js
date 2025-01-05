@@ -3,7 +3,7 @@ import { BiArrowBack, BiUpload } from 'react-icons/bi'
 
 import { FcAddImage } from 'react-icons/fc'
 import { ThreeDots } from 'react-loader-spinner'
-import BACKEND_URL from './config';
+import BACKEND_URL from "../../config";
 
 import '../createMCQ/index.css'
 

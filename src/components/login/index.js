@@ -5,7 +5,7 @@ import { ThreeDots } from 'react-loader-spinner'
 import './index.css';
 import logo from "../../imgs/logo.jpeg";
 import wcloud from '../../imgs/wcloud.jpg';
-import BACKEND_URL from './config';
+import BACKEND_URL from "../../config";
 
 class LoginPage extends Component {
     state = {

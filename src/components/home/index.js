@@ -15,7 +15,7 @@ import { FaRegCopyright } from "react-icons/fa6";
 import rgukt from "../../imgs/rg.jpeg"
 import mcq from '../../imgs/mcq.jpeg'
 import coding from '../../imgs/coding.jpeg'
-import BACKEND_URL from './config';
+import BACKEND_URL from "../../config";
 
 import './index.css'
 

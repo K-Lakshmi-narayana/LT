@@ -8,7 +8,7 @@ import { FcAddImage } from 'react-icons/fc'
 import { ThreeDots } from 'react-loader-spinner'
 import { TbLayoutSidebarLeftExpandFilled } from "react-icons/tb"
 import { TbLayoutSidebarRightExpandFilled } from "react-icons/tb"
-import BACKEND_URL from './config';
+import BACKEND_URL from "../../config";
 
 import Editor from "@monaco-editor/react"
 
