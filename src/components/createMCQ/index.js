@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BiArrowBack, BiUpload } from 'react-icons/bi'
+import BACKEND_URL from './config';
 
 import { TiTick } from 'react-icons/ti'
 import { RxCross2 } from 'react-icons/rx'
@@ -37,7 +38,7 @@ class CreateMCQ extends Component {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ token })
         }
-        const response = await fetch("http://localhost:3003/get-tier", options)
+        const response = await fetch(`${BACKEND_URL}/get-tier`, options)
         const data = await response.json()
         if (data.tier === 3){
             window.location.replace("/")
@@ -94,7 +95,7 @@ class CreateMCQ extends Component {
             method: "POST",
             body: imageData,
         }
-        const response = await fetch("http://localhost:3003/upload-mcq", options)
+        const response = await fetch(`${BACKEND_URL}/upload-mcq`, options)
         const data = await response.json()
         if (response.ok){
             alert(data)

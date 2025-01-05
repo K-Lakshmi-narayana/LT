@@ -1,6 +1,8 @@
 import { Component, React } from 'react'
 import './index.css'
 
+import BACKEND_URL from './config';
+
 import Editor from "@monaco-editor/react";
 import logo from "../../imgs/logo.jpeg";
 import { ThreeDots } from 'react-loader-spinner'
@@ -66,7 +68,7 @@ int main() {
             input: input,
             lang: lang
         }
-        var oData = await fetch("http://localhost:3003/compile", {
+        var oData = await fetch(`${BACKEND_URL}/compile`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

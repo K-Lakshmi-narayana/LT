@@ -3,6 +3,7 @@ import { BiArrowBack, BiUpload } from 'react-icons/bi'
 
 import { FcAddImage } from 'react-icons/fc'
 import { ThreeDots } from 'react-loader-spinner'
+import BACKEND_URL from './config';
 
 import '../createMCQ/index.css'
 
@@ -29,7 +30,7 @@ class CreateTrack extends Component {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ token })
         }
-        const response = await fetch("http://localhost:3003/get-tier", options)
+        const response = await fetch(`${BACKEND_URL}/get-tier`, options)
         const data = await response.json()
         data.tier === 3 && window.location.replace("/")
     }
@@ -41,7 +42,7 @@ class CreateTrack extends Component {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ "track_id": trackId })
         }
-        const response = await fetch("http://localhost:3003/get-track-details", options)
+        const response = await fetch(`${BACKEND_URL}/get-track-details`, options)
         const data = response.json()
         data.then((result) => {
             this.setState({ "track_details": result, "isLoading": false })
@@ -82,7 +83,7 @@ class CreateTrack extends Component {
             method: "POST",
             body: fd,
         }
-        const response = await fetch("http://localhost:3003/upload-track", options)
+        const response = await fetch(`${BACKEND_URL}/upload-track`, options)
         const data = await response.json()
 
         if (response.ok) {

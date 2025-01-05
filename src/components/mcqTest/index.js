@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+import BACKEND_URL from './config';
 
 import { ThreeDots } from 'react-loader-spinner'
 import "./index.css"
@@ -49,9 +50,9 @@ class McqTest extends Component {
             body: JSON.stringify({ test_id: testId })
         };
 
-        const response = await fetch("http://localhost:3003/get-live-test-start-details", options)
+        const response = await fetch(`${BACKEND_URL}/get-live-test-start-details`, options)
         const data = await response.json()
-        const response1 = await fetch("http://localhost:3003/get-mcq-question-details", options)
+        const response1 = await fetch(`${BACKEND_URL}/get-mcq-question-details`, options)
         const data1 = await response1.json()
         this.setState({ "testDetails": data[0], "qDetails": data1[0], "isLoading": false, "min": data[0].minutes, "sec": data[0].seconds })
     }

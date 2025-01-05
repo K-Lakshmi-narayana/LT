@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BiArrowBack, BiUpload } from 'react-icons/bi'
+import BACKEND_URL from './config';
 
 import '../createMCQ/index.css'
 
@@ -75,7 +76,7 @@ class CreateCodingTest extends Component {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ testName, testDesc, time, cq })
         }
-        const response = await fetch("http://localhost:3003/upload-cq", options)
+        const response = await fetch(`${BACKEND_URL}/upload-cq`, options)
         const data = await response.json()
         console.log(data)
         alert(data)

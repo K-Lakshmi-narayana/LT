@@ -15,6 +15,7 @@ import { FaRegCopyright } from "react-icons/fa6";
 import rgukt from "../../imgs/rg.jpeg"
 import mcq from '../../imgs/mcq.jpeg'
 import coding from '../../imgs/coding.jpeg'
+import BACKEND_URL from './config';
 
 import './index.css'
 
@@ -37,7 +38,7 @@ class Home extends Component {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ token })
         }
-        const response = await fetch("http://localhost:3003/get-tier", options)
+        const response = await fetch(`${BACKEND_URL}/get-tier`, options)
         const data = await response.json()
         this.setState({ "tier": data.tier })
     }
@@ -52,9 +53,9 @@ class Home extends Component {
     }
 
     fetchAllDetails = async () => {
-        const response = await fetch("http://localhost:3003/get-details")
+        const response = await fetch(`${BACKEND_URL}/get-details`)
         const data = await response.json()
-        const resp1 = await fetch("http://localhost:3003/get-live-test-details")
+        const resp1 = await fetch(`${BACKEND_URL}/get-live-test-details`)
         const data1 = await resp1.json()
         this.setState({ "testDetails": data1, "track_details": data[1], "isLoading": false })
     }

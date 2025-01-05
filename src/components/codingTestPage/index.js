@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Editor from "@monaco-editor/react";
 import { BsFillPlayFill } from 'react-icons/bs'
 import { ThreeDots } from 'react-loader-spinner'
+import BACKEND_URL from './config';
 
 import './index.css'
 
@@ -57,9 +58,9 @@ class CodingTestPage extends Component {
             body: JSON.stringify({ test_id: testId })
         };
 
-        const response = await fetch("http://localhost:3003/get-live-test-start-details", options)
+        const response = await fetch(`${BACKEND_URL}/get-live-test-start-details`, options)
         const data = await response.json()
-        const response1 = await fetch("http://localhost:3003/get-coding-question-details", options)
+        const response1 = await fetch(`${BACKEND_URL}/get-coding-question-details`, options)
         const data1 = await response1.json()
         console.log(data)
         console.log(data1)
@@ -92,7 +93,7 @@ class CodingTestPage extends Component {
             input: input,
             lang: lang
         }
-        var oData = await fetch("http://localhost:3003/compile", {
+        var oData = await fetch(`${BACKEND_URL}/compile`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -117,7 +118,7 @@ class CodingTestPage extends Component {
             body: JSON.stringify({ q_id: qDetails.id })
         };
 
-        const response = await fetch("http://localhost:3003/get-testcases", options)
+        const response = await fetch(`${BACKEND_URL}/get-testcases`, options)
         const data = await response.json()
 
         for (let i = 0; i < data.length; i++) {
@@ -128,7 +129,7 @@ class CodingTestPage extends Component {
                 input: tcase.tcase.split("~")[0].replace(/\\n/g, "\n"),
                 lang: lang
             }
-            var oData = await fetch("http://localhost:3003/compile", {
+            var oData = await fetch(`${BACKEND_URL}/compile`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -157,7 +158,7 @@ class CodingTestPage extends Component {
             body: JSON.stringify({st_id, test_id: testId, q_id: id, code })
         };
 
-        const response = await fetch("http://localhost:3003/submit-coding-test", options)
+        const response = await fetch(`${BACKEND_URL}/submit-coding-test`, options)
         const data = await response.json()
         alert(data)
         if (response.ok){

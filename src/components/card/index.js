@@ -2,6 +2,7 @@ import React from 'react'
 import { Component } from "react"
 import Modal from 'react-modal'
 
+import BACKEND_URL from './config';
 import './index.css'
 
 class Card extends Component {
@@ -22,7 +23,7 @@ class Card extends Component {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ "track_id": unqId })
     }
-    await fetch("http://localhost:3003/del-track", options)
+    await fetch( `${BACKEND_URL}/del-track`, options)
       .then(() => {
         window.location.replace("/")
       })
@@ -36,7 +37,7 @@ class Card extends Component {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ "track_id": unqId })
     }
-    const response = await fetch("http://localhost:3003/get-stopic-id", options)
+    const response = await fetch(`${BACKEND_URL}/get-stopic-id`, options)
     if (response.ok) {
       const data = await response.json()
       window.location.assign(`/tracks/${unqId}/${data.id}`)
@@ -101,7 +102,7 @@ class Card extends Component {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ "test_id": unqId })
     }
-    const response = await fetch("http://localhost:3003/go-live-test", options)
+    const response = await fetch(`${BACKEND_URL}/go-live-test`, options)
     
     if (response.ok){
       window.location.replace("/")
@@ -117,7 +118,7 @@ class Card extends Component {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ "test_id": unqId })
     }
-    const response = await fetch("http://localhost:3003/stop-live-test", options)
+    const response = await fetch(`${BACKEND_URL}/stop-live-test`, options)
     
     if (response.ok){
       window.location.replace("/")
@@ -139,7 +140,7 @@ class Card extends Component {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ "test_id": unqId })
     }
-    const response = await fetch("http://localhost:3003/del-test", options)
+    const response = await fetch(`${BACKEND_URL}/del-test`, options)
     
     if (response.ok){
       alert("Test Deleted Successfully!")

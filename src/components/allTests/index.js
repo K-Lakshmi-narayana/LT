@@ -7,6 +7,7 @@ import Card from "../card"
 import mcq from '../../imgs/mcq.jpeg'
 import coding from '../../imgs/coding.jpeg'
 
+import BACKEND_URL from './config';
 import './index.css'
 
 class AllTests extends Component {
@@ -28,7 +29,7 @@ class AllTests extends Component {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ token })
         }
-        const response = await fetch("http://localhost:3003/get-tier", options)
+        const response = await fetch(`${BACKEND_URL}/get-tier`, options)
         const data = await response.json()
         if (data.tier === 3) {
             window.location.replace("/")
@@ -37,7 +38,7 @@ class AllTests extends Component {
     }
 
     fetchAllDetails = async () => {
-        const response = await fetch("http://localhost:3003/get-details")
+        const response = await fetch(`${BACKEND_URL}/get-details`)
         const data = await response.json()
         this.setState({ "testDetails": data[0], "isLoading": false })
     }

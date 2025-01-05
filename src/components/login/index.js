@@ -5,6 +5,7 @@ import { ThreeDots } from 'react-loader-spinner'
 import './index.css';
 import logo from "../../imgs/logo.jpeg";
 import wcloud from '../../imgs/wcloud.jpg';
+import BACKEND_URL from './config';
 
 class LoginPage extends Component {
     state = {
@@ -106,7 +107,7 @@ class LoginPage extends Component {
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ email })
                 };
-                const response = await fetch("http://localhost:3003/signup", options)
+                const response = await fetch(`${BACKEND_URL}/signup`, options)
                 const data = await response.json()
                 if (response.ok) {
                     this.setState({ loginState: "verify", signupErr: "", mcode: data })
@@ -130,7 +131,7 @@ class LoginPage extends Component {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email })
             };
-            const response = await fetch("http://localhost:3003/verify", options)
+            const response = await fetch(`${BACKEND_URL}/verify`, options)
             const data = await response.json()
 
             window.localStorage.setItem('token', data["jwtToken"])

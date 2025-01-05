@@ -8,6 +8,7 @@ import { FcAddImage } from 'react-icons/fc'
 import { ThreeDots } from 'react-loader-spinner'
 import { TbLayoutSidebarLeftExpandFilled } from "react-icons/tb"
 import { TbLayoutSidebarRightExpandFilled } from "react-icons/tb"
+import BACKEND_URL from './config';
 
 import Editor from "@monaco-editor/react"
 
@@ -45,7 +46,7 @@ class Track extends Component {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ token })
         }
-        const response = await fetch("http://localhost:3003/get-tier", options)
+        const response = await fetch(`${BACKEND_URL}/get-tier`, options)
         const data = await response.json()
         this.setState({"tier": data.tier})
     }
@@ -57,7 +58,7 @@ class Track extends Component {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ "track_id": trackId })
         }
-        const response = await fetch("http://localhost:3003/get-topic-details", options)
+        const response = await fetch(`${BACKEND_URL}/get-topic-details`, options)
         const data = response.json()
         data.then((result) => {
             this.setState({ "topics": result, "isLoadingTDetails": false })
@@ -71,7 +72,7 @@ class Track extends Component {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ "st_id": stId })
         }
-        const response = await fetch("http://localhost:3003/get-subtopic-details", options)
+        const response = await fetch(`${BACKEND_URL}/get-subtopic-details`, options)
         const data = response.json()
         data.then((result) => {
             this.setState({ "subTopicDetails": result, "isLoadingStDetails": false  })
@@ -92,7 +93,7 @@ class Track extends Component {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ "topic_id": topics[i].id, "title": "New Sub Topic" })
         }
-        await fetch("http://localhost:3003/add-new-stopic", options).then(() => {
+        await fetch(`${BACKEND_URL}/add-new-stopic`, options).then(() => {
             this.fetchTopicDetails()
         })
     }
@@ -111,7 +112,7 @@ class Track extends Component {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ "topic": topics[i] })
         }
-        await fetch("http://localhost:3003/edit-topic", options).then(() => {
+        await fetch(`${BACKEND_URL}/edit-topic`, options).then(() => {
             this.fetchTopicDetails()
             const mtConEle = document.getElementById(`mt-con-${i}`)
             const emtConEle = document.getElementById(`mt-con-${i}-e`)
@@ -135,7 +136,7 @@ class Track extends Component {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ "topic_id": topics[delTopic].id })
         }
-        await fetch("http://localhost:3003/del-topic", options).then(() => {
+        await fetch(`${BACKEND_URL}/del-topic`, options).then(() => {
             this.fetchTopicDetails()
             this.setState({ "modalIsOpen": false, "delTopic": "" })
         })
@@ -161,7 +162,7 @@ class Track extends Component {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ "stopic": topics[i].subTopics[j] })
         }
-        await fetch("http://localhost:3003/edit-stopic", options).then(() => {
+        await fetch(`${BACKEND_URL}/edit-stopic`, options).then(() => {
             this.fetchTopicDetails()
             const stConEle = document.getElementById(`st-con-${i}${j}`)
             const estConEle = document.getElementById(`st-con-${i}${j}-e`)
@@ -179,7 +180,7 @@ class Track extends Component {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ "stopic_id": topics[delSTopic[0]].subTopics[delSTopic[1]].id })
         }
-        await fetch("http://localhost:3003/del-stopic", options).then(() => {
+        await fetch(`${BACKEND_URL}/del-stopic`, options).then(() => {
             this.fetchTopicDetails()
             this.setState({ "smodalIsOpen": false, "delSTopic": "" })
         })
@@ -194,7 +195,7 @@ class Track extends Component {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ "title": "New Topic", "track_id": trackId })
         }
-        await fetch("http://localhost:3003/add-new-topic", options).then(() => {
+        await fetch(`${BACKEND_URL}/add-new-topic`, options).then(() => {
             this.fetchTopicDetails()
         })
     }
@@ -339,7 +340,7 @@ class Track extends Component {
             method: "POST",
             body: formData,
         }
-        await fetch("http://localhost:3003/update-subtopic", options)
+        await fetch(`${BACKEND_URL}/update-subtopic`, options)
             .then(() => {
                 this.fetchSubTopicDetails()
                 this.setState({ "stEditMode": false })

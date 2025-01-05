@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import Header from "../header"
+import BACKEND_URL from './config';
 
 import './index.css'
 
@@ -23,7 +24,7 @@ class TestStartPage extends Component {
             body: JSON.stringify({ "test_id": testId })
         }
 
-        const response = await fetch("http://localhost:3003/get-live-test-start-details", options)
+        const response = await fetch(`${BACKEND_URL}/get-live-test-start-details`, options)
         const data = await response.json()
         this.setState({ "testDetails": data[0] })
     }
