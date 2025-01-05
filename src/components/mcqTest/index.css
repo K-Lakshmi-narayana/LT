@@ -1,0 +1,116 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.mcq-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-top: -8px;
+    box-shadow: 1px 1px 8px #28C877;
+}
+
+.mcq-nav-header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 6px;
+}
+
+.st-btn {
+    align-self: center;
+    background-color: #28C877;
+    border-radius: 8px;
+    margin-top: 9px;
+    padding: 5px;
+    padding-bottom: 8px;
+    color: #ffffff;
+    height: 43px;
+    width: 131px;
+    border: 2px solid #28C877;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+@media screen and (min-width: 768px) {
+    .st-btn {
+        margin-right: 27px;
+    }
+
+}
+
+.st-btn:hover {
+    border: 2px solid #28C877;
+    background-color: #ffffff;
+    color: #28C877;
+}
+
+.time-con {
+    font-size: 24px;
+    font-weight: 500;
+    color: #0f3f27;
+    border: 2px solid #28C877;
+    padding: 3px;
+    width: 171px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 16px;
+    border-radius: 11px;
+    margin-top: 10px;
+    height: 50px;
+}
+
+.mcq-name {
+    width: 25vw;
+    color: rgb(9, 70, 1);
+    font-family: monospace;
+    font-weight: 600;
+    overflow: scroll;
+    margin-left: 20px;
+    font-size: 27px;
+    margin-right: -14.5vw;
+}
+
+.mcq-name::-webkit-scrollbar {
+    display: none;
+}
+
+.page-num-con {
+    margin-top: 11px;
+}
+
+.page-numbers {
+    padding: 10px;
+    width: 121px;
+    overflow-x: scroll;
+}
+
+.page-numbers::-webkit-scrollbar {
+    display: none;
+}
+
+.page-numbers p {
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+.page-btn {
+    margin: 7px;
+    font-size: 21px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    width: 33px;
+    height: 33px;
+    border: none;
+    background-color: #008543;
+    color: aliceblue;
+    border-radius: 33px;
+    cursor: pointer;
+}

@@ -1,0 +1,51 @@
+.all-tests-head {
+    color: #1a6213;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 28px;
+    font-weight: bolder;
+}
+.all-tests-head-con{
+    display: flex;
+    justify-content: space-between;
+    padding: 31px;
+}
+
+.search-input{
+    width: 20vw;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid #034C03;
+    padding: 10px;
+}
+.search-input:focus{
+    box-shadow: 1px 1px 5px 2px #a4eec9;
+    outline: none;
+    border: 1px solid #75dea9;
+    padding: 11px;
+    padding-left: 21px;
+    font-size: 15px;
+    height: 45px;
+}
+.all-tests-cards-container {
+    overflow-x: scroll;
+    width: 97%;
+    margin-bottom: 20px;
+    margin-left: 21px;
+}
+
+.all-tests-cards-container::-webkit-scrollbar {
+    height: 7px;
+}
+
+.all-tests-cards-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.all-tests-cards-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+
+.all-tests-cards-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
