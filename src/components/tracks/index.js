@@ -17,7 +17,7 @@ import './index.css'
 class Track extends Component {
     state = {
         "topics": [], "modalIsOpen": false, "smodalIsOpen": false, "delTopic": "", "delSTopic": "", "delStField": "", "stEditMode": false, "sfmodalIsOpen": false,
-        "subTopicDetails": [], "delStDetails": [], "isLoadingTDetails": true, "isLoadingStDetails": true, "slide": false, "tier": 3
+        "subTopicDetails": [], "delStDetails": [], "isLoadingTDetails": true, "isLoadingStDetails": true, "slide": false, "tier": 1
     }
 
     componentDidMount() {
