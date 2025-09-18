@@ -104,7 +104,7 @@ int main() {
     render() {
         const { lang, cin, output, input, isRunning, code } = this.state
         const options = {
-            "quickSuggestions": false,
+            "quickSuggestions": true,
         }
         return (
             <div className="row m-3">
